@@ -27,4 +27,17 @@ $(function(){
 	$('.fixed_block').mousemove(function(e){
 	   $('.cursor').css('top',e.pageY);
 	  });
+	  
+	 $('.slider_block').cycle({ 
+		fx:     'scrollHorz', 
+		speed:  'slow', 
+		timeout: 0, 
+		next:   '.slider_arrow_r', 
+		prev:   '.slider_arrow_l' 
+	});	
+	$('.acc_trigger').click(function(){
+		$(this).toggleClass('active');
+        $(this).next('.acc_container').slideToggle()
+        return false;   
+    });
 });
